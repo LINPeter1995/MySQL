@@ -1,2 +1,2 @@
 # MySQL
-MySQL語句
+MySQL syntax and queries
