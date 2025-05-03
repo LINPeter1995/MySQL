@@ -51,7 +51,9 @@ MySQL子語言：共五種（最常用為DQL）
 1. SELECT 敘述
 
 SELECT 欄位 FROM 表格;
+
 SELECT * FROM 表格;
+
 SELECT DISTINCT 欄位 FROM 表格;
 
 2. NULL 值處理
