@@ -1,103 +1,235 @@
-# MySQL
+🖥 一、電腦與網路基礎
 
-"一、電腦基礎講解 
-        1. 基本介紹 
-            1. 硬體: 硬碟(慢) / 記憶體(快) 
-            2. 軟體可分:應用程式application(前景執行) / 系統system(背景執行) 
-        2. 基本網路用語: IP / Client客戶端 / Server伺服器 / Port埠 
-二、資料庫導論 
-        1. 資料庫概念存在已久，儲存方式: 紙本 → 磁帶 →檔案→ 資料庫 
-        2. 資料庫系統 = 資料庫(DB)+資料庫管理系統(DBMS) 
-        3. 資料庫物件階層：1.伺服器(server) 、2.DBMS(安裝於server)、3.DB(可建多個，等同C/D槽) 、4.綱要(schema ,MySQL中等同DB)、5.資料表(table)、6.欄(column)、7.資料列(row / record)、8.值(cell )"
+1. 基本介紹
 
-        "一、安裝環境 
-二、 MySQL基本觀念 
-        1. MySQL包含五種子語言，子語言內有敘述及子句 
-        2. 每段敘述結尾應加分號 
-        3. 利用換行及縮排增加程式可讀性 
-三、子語言DQL(data query language) 
-        1. DQL僅用於查詢、不異動table資料，裡面僅有一個select敘述 
-        2. select子句 
-            1. select (欄位) from (table) 查詢指定欄位 
-            2. select * form (table) 看全部欄位 
-            3. select distinct (欄位) from (table) 顯示去除重複後的資料 
-        3. 空值NULL 
-        4. 字串串接: select concat(’字串1’, ‘字串2’,….) 
-        5. 值轉換: case…then…end as 別名 
-            1. 簡易型: case (原值1) then (新值1) … end 
-            2. 搜索型: case (條件1) then (結果1) … end "
+硬體：
 
-            "select敘述 where 子句
-    1.between 值1 and 值2
-    2.in(值1,值2)
-    3.is [not] null
-    4.like '%' '_' escape
-select敘述 order by⼦句
-    1.asc/desc:排序的⽅向(遞增/遞減)，預設為asc
-作業2
-select敘述 group by⼦句
-    1.內建函式"
+硬碟（慢）
 
-    "select敘述 group by ⼦句
-    1.字串函式
-    2.數值函式
-    3.⽇期時間函式
-    4.資料型態轉換函式
-    5.通⽤函式：系統資料函式跳過，IF(expr1,expr2,expr3)：三元運算子
-    6.聚合/群組函式
-select敘述 having ⼦句
-select敘述 from ⼦句
-    1.基本語法
-    2.join的種類
-    3.cross join
-    4.natural join
-    5.equal join"
+記憶體（快）
 
-    JOIN子句
-    dml敘述
+軟體：
 
-    "講解作業題目
-TCL交易控制語言
-autocommit、commit、rollback、savepoint
-作業8
-DDL 資料定義語⾔
-create database
-create table
-"
+應用程式（application，前景執行）
 
-"DDL 資料定義語⾔:
-primary key 
-unique key
-foreign key, 約束 on update/on delete
-check
-auto increment 自動編號
-建立資料表變化型
-drop table 移除資料表
-truncate table 清理資料表"
+系統軟體（system，背景執行）
 
-"1. DDL: alter table 修改表單
-- 差異: update是修改資料 / alter是修改表單結構
-- 調整欄位: add / drop / change column ...
-- 調整約束: add / drop primary key ; add / drop constraint (UK / FK / Check)
-- 調整表單名(rename)可能造成程式碼出錯
-2. 其他物件: View
-- view是把select敘述的結果儲存 , 它可以被寫在from後面 , 資料庫層級等同table 
-- 使⽤到的資料來源即為基底資料表(Based Table)，修改/移除基底資料表，可能會造成View產⽣錯誤
-- 建立方式類似新建table , create view (name) as (子查詢)
-- view的異動 = 透過view異動table，view可異動但結果可能不如預期"
+2. 網路基本用語
 
-- "1. 其他物件:
-1.1. Index:
--. 用於快速查找資料
--. 針對某個Table，由1個或多個Column組成
--. 種類: 主要索引(建立PK時由資料庫建立) / 複合索引 / 唯一索引(UI跟UK 2個效果一樣，部分資料庫會放棄UK) / 一般索引(建立FK時會自動建立)
-1.2. function: 跟python一樣可自訂函式並設定回傳值
-1.3. stored procedure: 沒有return，但會設定輸出的out參數
-1.4. trigger: 針對資料表，當資料表進行新刪修的發生前或發生後，執行trigger內的程式碼
-1.5. event: 新增後依照設定時間馬上執行do裡面的行為
-2. 其他功能:
-2.1. 分組排名: select  rank() over( partition by (分組欄位) order by (排名欄位) [desc]) as 別名，依據partition by 後面的欄位進行分組後，再做排名
-2.2. union: 兩個表單的垂直串聯 select * from (表單1) union select * from (表單2)
-3. CTE:
-- 將表單查詢結果儲存在一個變數中: with (變數) as (子查詢) select * from (表單)
-- 可進階做遞迴查詢，第一次的查詢結果可被後續的查詢使用 : with recursive (變數) as ( 第一次的查詢動作 union all 第二次後的遞迴查詢 ) select * from (表單)"
+IP：網路位址
+
+Client（客戶端） / Server（伺服器）
+
+Port（埠口）：程式服務的端口
+
+🗃 二、資料庫導論
+
+1. 儲存演進
+   
+紙本 → 磁帶 → 檔案 → 資料庫
+
+2. 資料庫組成
+   
+資料庫 (DB)
+
+資料庫管理系統 (DBMS)
+
+3. 資料庫物件階層
+   
+Server → DBMS → DB（如C槽）→ Schema（MySQL中等同DB）→ Table → Column → Row/Record → Cell（值）
+
+🛠 三、MySQL 安裝與基本觀念
+
+每段語法以 分號(;) 結尾
+
+使用 縮排與換行 提高可讀性
+
+MySQL子語言：共五種（最常用為DQL）
+
+🔎 四、DQL（Data Query Language）資料查詢語言
+
+1. SELECT 敘述
+
+SELECT 欄位 FROM 表格;
+SELECT * FROM 表格;
+SELECT DISTINCT 欄位 FROM 表格;
+
+2. NULL 值處理
+
+IS NULL / IS NOT NULL
+
+3. 字串處理
+   
+串接字串：CONCAT('字串1', '字串2')
+
+4. 值轉換
+
+CASE 欄位
+    WHEN '原值' THEN '新值'
+    ...
+END AS 別名;
+
+5. WHERE 子句條件
+
+BETWEEN 值1 AND 值2
+
+IN (值1, 值2)
+
+IS [NOT] NULL
+
+LIKE '%abc_' ESCAPE
+
+6. 排序
+   
+ORDER BY 欄位 ASC/DESC;
+
+📊 五、Group By 與聚合函式
+
+1. GROUP BY 子句
+
+SELECT 欄位, COUNT(*) FROM 表格 GROUP BY 欄位;
+
+2. 內建函式分類
+   
+字串函式
+
+數值函式
+
+日期時間函式
+
+資料型態轉換函式
+
+通用函式：IF(expr1, expr2, expr3)
+
+群組函式：SUM, AVG, MAX, MIN, COUNT
+
+3. HAVING 子句
+   
+對群組後結果再加條件：
+
+SELECT 欄位, COUNT(*) FROM 表格 GROUP BY 欄位 HAVING COUNT(*) > 1;
+
+🔗 六、JOIN 子句與 FROM 子句
+
+INNER JOIN
+
+LEFT JOIN
+
+RIGHT JOIN
+
+CROSS JOIN
+
+NATURAL JOIN
+
+EQUAL JOIN
+
+✍️ 七、DML（Data Manipulation Language）
+
+操作資料用語句（新增、修改、刪除）
+
+🔒 八、TCL（Transaction Control Language）交易控制語言
+
+AUTOCOMMIT：自動提交
+
+COMMIT：確認儲存
+
+ROLLBACK：還原
+
+SAVEPOINT：設立還原點
+
+🧱 九、DDL（Data Definition Language）資料定義語言
+
+1. 建立
+   
+CREATE DATABASE
+
+CREATE TABLE
+
+2. 欄位與約束
+   
+PRIMARY KEY
+
+UNIQUE KEY（UNIQUE 或 UK）
+
+FOREIGN KEY：ON UPDATE / ON DELETE
+
+CHECK
+
+AUTO_INCREMENT
+
+3. 表格操作
+   
+DROP TABLE：移除整張表
+
+TRUNCATE TABLE：清空表內資料
+
+4. 修改表格：ALTER TABLE
+
+ADD COLUMN, DROP COLUMN, CHANGE COLUMN
+
+ADD/DROP PRIMARY KEY
+
+ADD/DROP CONSTRAINT
+
+RENAME TABLE
+
+👁 十、其他資料庫物件與功能
+
+1. View（檢視表）
+
+儲存 SELECT 結果的虛擬表
+
+CREATE VIEW 檢視名稱 AS SELECT ...
+
+2. Index（索引）
+
+加速查詢
+
+種類：
+
+主索引（PK）
+
+複合索引
+
+唯一索引（UI / UK）
+
+一般索引（自動建立於FK）
+
+3. Function / Stored Procedure / Trigger / Event
+
+Function：有回傳值
+
+Stored Procedure：透過 OUT 輸出結果
+
+Trigger：針對資料表操作前後執行
+
+Event：指定時間執行的自動任務
+
+🧮 十一、進階功能
+
+1. 分組排名
+
+SELECT RANK() OVER (PARTITION BY 分組欄位 ORDER BY 排名欄位 DESC) AS 排名
+
+2. UNION
+
+SELECT * FROM 表1
+UNION
+SELECT * FROM 表2
+
+3. CTE（共通表達式）
+
+WITH 變數 AS (
+    SELECT ...
+)
+SELECT * FROM 變數;
+
+4. 遞迴查詢
+
+WITH RECURSIVE 變數 AS (
+    初始查詢
+    UNION ALL
+    遞迴查詢
+)
+SELECT * FROM 變數;
+
