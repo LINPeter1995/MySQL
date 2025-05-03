@@ -1,4 +1,4 @@
-一、電腦與網路基礎
+# 一、電腦與網路基礎
 
 1. 基本介紹
 
@@ -22,7 +22,7 @@ Client（客戶端） / Server（伺服器）
 
 Port（埠口）：程式服務的端口
 
-二、資料庫導論
+# 二、資料庫導論
 
 1. 儲存演進
    
@@ -38,7 +38,7 @@ Port（埠口）：程式服務的端口
    
 Server → DBMS → DB（如C槽）→ Schema（MySQL中等同DB）→ Table → Column → Row/Record → Cell（值）
 
-三、MySQL 安裝與基本觀念
+# 三、MySQL 安裝與基本觀念
 
 每段語法以 分號(;) 結尾
 
@@ -46,7 +46,7 @@ Server → DBMS → DB（如C槽）→ Schema（MySQL中等同DB）→ Table →
 
 MySQL子語言：共五種（最常用為DQL）
 
-四、DQL（Data Query Language）資料查詢語言
+# 四、DQL（Data Query Language）資料查詢語言
 
 1. SELECT 敘述
 
@@ -85,7 +85,7 @@ LIKE '%abc_' ESCAPE
    
 ORDER BY 欄位 ASC/DESC;
 
-五、Group By 與聚合函式
+# 五、Group By 與聚合函式
 
 1. GROUP BY 子句
 
@@ -111,7 +111,7 @@ SELECT 欄位, COUNT(*) FROM 表格 GROUP BY 欄位;
 
 SELECT 欄位, COUNT(*) FROM 表格 GROUP BY 欄位 HAVING COUNT(*) > 1;
 
-六、JOIN 子句與 FROM 子句
+# 六、JOIN 子句與 FROM 子句
 
 INNER JOIN
 
@@ -125,11 +125,11 @@ NATURAL JOIN
 
 EQUAL JOIN
 
-七、DML（Data Manipulation Language）
+# 七、DML（Data Manipulation Language）
 
 操作資料用語句（新增、修改、刪除）
 
-八、TCL（Transaction Control Language）交易控制語言
+# 八、TCL（Transaction Control Language）交易控制語言
 
 AUTOCOMMIT：自動提交
 
@@ -139,7 +139,7 @@ ROLLBACK：還原
 
 SAVEPOINT：設立還原點
 
-九、DDL（Data Definition Language）資料定義語言
+# 九、DDL（Data Definition Language）資料定義語言
 
 1. 建立
    
@@ -175,7 +175,7 @@ ADD/DROP CONSTRAINT
 
 RENAME TABLE
 
-十、其他資料庫物件與功能
+# 十、其他資料庫物件與功能
 
 1. View（檢視表）
 
@@ -207,7 +207,7 @@ Trigger：針對資料表操作前後執行
 
 Event：指定時間執行的自動任務
 
-十一、進階功能
+# 十一、進階功能
 
 1. 分組排名
 
