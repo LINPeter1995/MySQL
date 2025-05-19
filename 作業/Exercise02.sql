@@ -1,20 +1,44 @@
 # 01. 請列出薪資不介於 1000 到 2000 的員工之 姓名 和 薪資
-select ..;
+SELECT ENAME, SAL 
+FROM EMP 
+WHERE SAL NOT BETWEEN 1000 AND 2000;
+
 
 # 02. 請列出到職年(到職日之年)為1981的員工之姓名、職稱、到職日，並依到職日遞減排序
-select ..;
+SELECT ENAME, JOB, HIREDATE 
+FROM EMP 
+WHERE YEAR(HIREDATE) = 1981 
+ORDER BY HIREDATE DESC;
+
 
 # 03. 請列出薪資超過2000 且 部門編號為10或30 的員工之姓名、薪資，並依序取別名為 "EMPLOYEE_NAME"、"SALARY"
-select ..;
+SELECT ENAME AS EMPLOYEE_NAME, SAL AS SALARY 
+FROM EMP 
+WHERE SAL > 2000 AND DEPTNO IN (10, 30);
+
 
 # 04. 請列出有獎金(獎金 不是null，也不是0)的員工之姓名、薪資、獎金，並排序，排序依據為薪資加上獎金
-select ..;
+SELECT ENAME, SAL, COMM 
+FROM EMP 
+WHERE COMM IS NOT NULL AND COMM != 0 
+ORDER BY (SAL + COMM);
+
 
 # 05. 請列出員工姓名最後一個字是"S"的員工之姓名、職稱
-select ..;
+SELECT ENAME, JOB 
+FROM EMP 
+WHERE ENAME LIKE '%S';
+
 
 # 06. 請列出職稱為CLERK、SALESMAN，且薪資不等於1100、1300、1500的員工之姓名、職稱、薪資
-select ..;
+SELECT ENAME, JOB, SAL 
+FROM EMP 
+WHERE JOB IN ('CLERK', 'SALESMAN') 
+AND SAL NOT IN (1100, 1300, 1500);
+
 
 # 07. 請列出獎金大於薪資1.05倍的員工之姓名、薪資、獎金
-select ..;
+SELECT ENAME, SAL, COMM 
+FROM EMP 
+WHERE COMM IS NOT NULL AND COMM > SAL * 1.05;
+

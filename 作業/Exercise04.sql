@@ -1,14 +1,35 @@
 # 01. 請列出部門編號、部門平均薪資，只顯示部門平均薪資大於2500的部門
+SELECT DEPTNO, AVG(SAL) AS AVG_SALARY
+FROM EMP
+GROUP BY DEPTNO
+HAVING AVG(SAL) > 2500;
 
 
 # 02. 請列出到職年、該年到職人數，只顯示到職年當年人數等於1的資料
+SELECT YEAR(HIREDATE) AS HIRE_YEAR, COUNT(*) AS EMPLOYEE_COUNT
+FROM EMP
+GROUP BY YEAR(HIREDATE)
+HAVING COUNT(*) = 1;
 
 
 # 03. 請列出部門編號、部門每月發出薪資總和，只顯示部門每月發出薪資總和小於10000的部門，並依部門編號遞減排序
+SELECT DEPTNO, SUM(SAL) AS MONTHLY_TOTAL
+FROM EMP
+GROUP BY DEPTNO
+HAVING SUM(SAL) < 10000
+ORDER BY DEPTNO DESC;
 
 
-# 04. 請列出職稱、職稱平均薪資、職稱人數，只顯示職稱平均薪資大於2000 且 職稱人數小於2的資料
+# 04. 請列出職稱、職稱平均薪資、職稱人數，只顯示職稱平均薪資大於2000且職稱人數小於2的資料
+SELECT JOB, AVG(SAL) AS AVG_SALARY, COUNT(*) AS EMP_COUNT
+FROM EMP
+GROUP BY JOB
+HAVING AVG(SAL) > 2000 AND COUNT(*) < 2;
 
 
 # 05. 請列出部門編號、部門最低薪資、部門最高薪資，且過濾掉最低薪資大於1200的資料
+SELECT DEPTNO, MIN(SAL) AS MIN_SALARY, MAX(SAL) AS MAX_SALARY
+FROM EMP
+GROUP BY DEPTNO
+HAVING MIN(SAL) <= 1200;
 
